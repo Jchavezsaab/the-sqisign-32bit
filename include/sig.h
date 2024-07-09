@@ -2,7 +2,7 @@
 
 #ifndef SQISIGN_H
 #define SQISIGN_H
-
+#include <stddef.h>
 #include <stdint.h>
 
 /**

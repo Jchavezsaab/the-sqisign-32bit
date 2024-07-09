@@ -2,6 +2,7 @@
 
 #ifndef rng_h
 #define rng_h
+#include <stddef.h>
 
 #ifdef PQM4
 #define randombytes PQCLEAN_randombytes
