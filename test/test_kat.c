@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 static int test_sig_kat(int cnt) {
     unsigned char       seed[48];
     unsigned char       *m, *sm, *m1, *sm_rsp;
-    unsigned long long  mlen, smlen, mlen1;
+    size_t  mlen, smlen, mlen1;
     int                 count;
     int                 done;
     unsigned char       pk[CRYPTO_PUBLICKEYBYTES], sk[CRYPTO_SECRETKEYBYTES];
@@ -75,7 +75,7 @@ static int test_sig_kat(int cnt) {
         randombytes_init(seed, NULL, 256);
 
         if ( FindMarker(fp_rsp, "mlen = ") ) {
-            ret_val = fscanf(fp_rsp, "%lld", &mlen);
+            ret_val = fscanf(fp_rsp, "%zu", &mlen);
         } else {
             printf("ERROR: unable to read 'mlen' from <%s>\n", fn_rsp);
             return KAT_DATA_ERROR;
@@ -136,7 +136,7 @@ static int test_sig_kat(int cnt) {
         }
 
         if ( mlen != mlen1 ) {
-            printf("crypto_sign_open returned bad 'mlen': Got <%lld>, expected <%lld>\n", mlen1, mlen);
+            printf("crypto_sign_open returned bad 'mlen': Got <%zu>, expected <%zu>\n", mlen1, mlen);
             return KAT_CRYPTO_FAILURE;
         }
 

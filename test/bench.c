@@ -79,13 +79,13 @@ static int bench_sig(int runs, int csv) {
     int64_t cycles, cycles1, cycles2;
     int64_t cycles_list[10000];
 
-    const int m_len = 32;
+    const size_t m_len = 32;
 
     unsigned char *pk  = calloc(CRYPTO_PUBLICKEYBYTES, 1);
     unsigned char *sk  = calloc(CRYPTO_SECRETKEYBYTES, 1);
     unsigned char *sig = calloc(CRYPTO_BYTES + m_len, 1);
     unsigned char *m   = calloc(m_len, 1);
-    unsigned long long len = CRYPTO_BYTES;
+    size_t len = CRYPTO_BYTES;
 
     if (csv) {
         printf("%s,", CRYPTO_ALGNAME);
