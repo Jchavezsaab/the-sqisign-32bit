@@ -424,6 +424,10 @@ assert(enc - start == SIGNATURE_LEN);
 
 #include <fips202.h>
 
+#ifdef PQM4
+#define SHAKE256 shake256
+#endif
+
 void hash_to_challenge(ibz_vec_2_t *scalars, const ec_curve_t *curve, const unsigned char *message, size_t length)
 {
     unsigned char *buf = malloc(FP2_ENCODED_BYTES + length);

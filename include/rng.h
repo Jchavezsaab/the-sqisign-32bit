@@ -3,6 +3,10 @@
 #ifndef rng_h
 #define rng_h
 
+#ifdef PQM4
+#define randombytes PQCLEAN_randombytes
+#endif
+
 /**
  * Randombytes initialization.
  * Initialization may be needed for some random number generators (e.g. CTR-DRBG).
@@ -23,6 +27,6 @@ void randombytes_init(unsigned char *entropy_input,
  * @param[in] xlen Number of random bytes to be generated
  * @return int 0 on success, -1 otherwise
  */
-int randombytes(unsigned char *x, unsigned long long xlen);
+int randombytes(unsigned char *x, size_t xlen);
 
 #endif /* rng_h */

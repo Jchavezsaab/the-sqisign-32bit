@@ -32,8 +32,8 @@ int sqisign_keypair(unsigned char *pk, unsigned char *sk);
  * @return int status code
  */
 int sqisign_sign(unsigned char *sm,
-              unsigned long long *smlen, const unsigned char *m,
-              unsigned long long mlen, const unsigned char *sk);
+              size_t *smlen, const unsigned char *m,
+              size_t mlen, const unsigned char *sk);
 
 /**
  * SQIsign open signature.
@@ -50,8 +50,8 @@ int sqisign_sign(unsigned char *sm,
  * @return int status code
  */
 int sqisign_open(unsigned char *m,
-              unsigned long long *mlen, const unsigned char *sm,
-              unsigned long long smlen, const unsigned char *pk);
+              size_t *mlen, const unsigned char *sm,
+              size_t smlen, const unsigned char *pk);
 
 
 /**
@@ -67,7 +67,7 @@ int sqisign_open(unsigned char *m,
  * @return int 0 if verification succeeded, 1 otherwise.
  */
 int sqisign_verify(const unsigned char *m,
-                unsigned long long mlen, const unsigned char *sig,
-                unsigned long long siglen, const unsigned char *pk);
+                size_t mlen, const unsigned char *sig,
+                size_t siglen, const unsigned char *pk);
 
 #endif

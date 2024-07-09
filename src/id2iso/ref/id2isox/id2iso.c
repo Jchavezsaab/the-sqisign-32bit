@@ -4,12 +4,6 @@
 #include <id2iso.h>
 #include <inttypes.h>
 #include <locale.h> 
-#include <bench.h>
-
-static __inline__ uint64_t rdtsc(void)
-{
-    return (uint64_t) cpucycles();
-}
 
 static int test_point_order_twof(ec_point_t *P, ec_curve_t *E) {
     ec_point_t test = *P;

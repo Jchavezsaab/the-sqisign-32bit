@@ -1,5 +1,5 @@
 #include <assert.h>
-#include "include/fp.h"
+#include "fp.h"
 
 #ifdef RADIX_32
 const digit_t p[NWORDS_FIELD] =  { 0xffffffff, 0xffffffff, 0x355147FF, 0x252C9E49, 0x87407437, 0x33A6A865, 0x6B95D98C, 0x34E29E28 };

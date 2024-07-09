@@ -249,8 +249,8 @@ int64_t ibz_get(const ibz_t *i);
 
 //void ibz_printf(const char* format, ...);
 #ifdef ENABLE_MINI_GMP
-__attribute__((unused)) static void ibz_printf(const char* str, ...) { }
-__attribute__((unused)) static void gmp_printf(const char* str, ...) { }
+__attribute__((unused)) static void ibz_printf(const char* str, ...) { (void)str; }
+__attribute__((unused)) static void gmp_printf(const char* str, ...) { (void)str; }
 #else
 #define ibz_printf gmp_printf
 #endif
